@@ -1,0 +1,261 @@
+/* Dark Theme Hero Overrides */
+.dark-hero {
+    background: #060b14; /* Deep navy/black */
+    color: white;
+    position: relative;
+    overflow: hidden;
+    padding-top: 180px;
+    padding-bottom: 120px;
+    margin-top: -100px;
+}
+
+.dark-hero::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0%;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle at center, rgba(0, 150, 255, 0.15) 0%, transparent 60%);
+    transform: translateY(-50%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.dark-hero h1 {
+    color: white;
+    font-size: 56px;
+    line-height: 1.1;
+    letter-spacing: -2px;
+}
+
+.text-gradient-blue {
+    background: linear-gradient(90deg, #00f2fe 0%, #4facfe 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.btn-glow {
+    background: linear-gradient(90deg, #00f2fe 0%, #4facfe 100%);
+    color: #060b14;
+    border: none;
+    box-shadow: 0 0 20px rgba(0, 242, 254, 0.3);
+    font-weight: 600;
+}
+.btn-glow:hover {
+    box-shadow: 0 0 30px rgba(0, 242, 254, 0.6);
+    transform: translateY(-2px);
+    color: #060b14;
+}
+
+.btn-secondary-dark {
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+.btn-secondary-dark:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+/* Digital Command Center Graphic */
+.hero-graphic-container {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.command-center {
+    position: relative;
+    width: 400px;
+    height: 400px;
+}
+
+.grid-bg {
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    right: -50px;
+    bottom: -50px;
+    background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    border-radius: 50%;
+    mask-image: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 70%);
+    -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 70%);
+    z-index: 0;
+    animation: pulseGrid 8s infinite alternate;
+}
+
+@keyframes pulseGrid {
+    0% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+.infinity-path {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 600px;
+    height: 300px;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.animated-path {
+    animation: dashPath 10s linear infinite;
+}
+
+@keyframes dashPath {
+    to { stroke-dashoffset: -1000; }
+}
+
+.connection-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.connection-lines line {
+    stroke: rgba(0, 242, 254, 0.3);
+    stroke-width: 1.5;
+    stroke-dasharray: 4 4;
+    animation: marchLines 20s linear infinite;
+}
+
+@keyframes marchLines {
+    to { stroke-dashoffset: 100; }
+}
+
+.core-hub {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 120px;
+    background: rgba(6, 11, 20, 0.8);
+    border: 1px solid rgba(0, 242, 254, 0.6);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 600;
+    color: #00f2fe;
+    letter-spacing: 1px;
+    box-shadow: 0 0 40px rgba(0, 242, 254, 0.3), inset 0 0 20px rgba(0, 242, 254, 0.2);
+    backdrop-filter: blur(10px);
+    z-index: 5;
+    animation: floatHub 4s ease-in-out infinite;
+}
+
+@keyframes floatHub {
+    0%, 100% { transform: translate(-50%, -50%); }
+    50% { transform: translate(-50%, -55%); }
+}
+
+.core-pulse {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid #00f2fe;
+    animation: pulseCore 2s infinite;
+}
+
+@keyframes pulseCore {
+    0% { transform: scale(1); opacity: 0.8; }
+    100% { transform: scale(1.5); opacity: 0; }
+}
+
+.conn-card {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    border-radius: 12px;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: white;
+    font-weight: 500;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    z-index: 4;
+    transition: all 0.3s ease;
+    animation: floatNodes 6s ease-in-out infinite;
+}
+
+.conn-card:hover {
+    background: rgba(0, 242, 254, 0.1);
+    border-color: rgba(0, 242, 254, 0.4);
+    transform: translateY(-5px) scale(1.05);
+}
+
+.card-icon {
+    color: #00f2fe;
+}
+
+@keyframes floatNodes {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.card-ai { top: 15%; left: 10%; animation-delay: 0s; }
+.card-cloud { top: 15%; right: 10%; animation-delay: 1s; }
+.card-mobile { top: 70%; left: 10%; animation-delay: 2s; }
+.card-web { top: 70%; right: 10%; animation-delay: 3s; }
+.card-api { top: 0%; left: 50%; transform: translateX(-50%); animation-delay: 4s; }
+.card-data { bottom: 0%; left: 50%; transform: translateX(-50%); animation-delay: 5s; }
+
+.status-badge {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(6, 11, 20, 0.8);
+    border: 1px solid rgba(0, 242, 254, 0.3);
+    border-radius: 20px;
+    padding: 6px 12px;
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(8px);
+    z-index: 6;
+}
+
+.badge-secure { top: 30%; right: -10%; }
+.badge-scalable { bottom: 30%; left: -15%; }
+.badge-automated { top: 50%; left: -20%; }
+
+.particle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: #00f2fe;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #00f2fe;
+    animation: floatParticle 8s infinite linear;
+}
+
+@keyframes floatParticle {
+    0% { transform: translateY(0) translateX(0) scale(1); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateY(-100px) translateX(50px) scale(0); opacity: 0; }
+}
+
+.p-1 { top: 80%; left: 20%; animation-delay: 0s; }
+.p-2 { top: 90%; left: 70%; animation-delay: 2s; }
+.p-3 { top: 70%; left: 50%; animation-delay: 4s; }
+.p-4 { top: 60%; left: 80%; animation-delay: 6s; }
