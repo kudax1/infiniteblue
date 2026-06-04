@@ -13,6 +13,7 @@ export interface BlogPost {
   description: string;
   author: string;
   readTime: string;
+  image?: string;
   tags: string[];
   content: string;
 }
@@ -24,6 +25,7 @@ export interface BlogPostMeta {
   description: string;
   author: string;
   readTime: string;
+  image?: string;
   tags: string[];
 }
 
@@ -47,6 +49,7 @@ export function getAllPosts(): BlogPostMeta[] {
       description: data.description || '',
       author: data.author || 'InfiniteBlue',
       readTime: data.readTime || '5 min read',
+      image: data.image || '',
       tags: data.tags || [],
     };
   });
@@ -69,6 +72,7 @@ export async function getPostBySlug(slug: string): Promise<BlogPost> {
     description: data.description || '',
     author: data.author || 'InfiniteBlue',
     readTime: data.readTime || '5 min read',
+    image: data.image || '',
     tags: data.tags || [],
     content: contentHtml,
   };

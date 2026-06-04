@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import { getPostBySlug, getAllPostSlugs } from '@/lib/blog';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowLeft, Calendar, Clock } from 'lucide-react';
 
 interface PageProps {
@@ -24,6 +25,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       type: 'article',
       publishedTime: post.date,
       authors: [post.author],
+      images: post.image ? [{ url: post.image }] : undefined,
     },
   };
 }
@@ -51,6 +53,11 @@ export default async function BlogPostPage({ params }: PageProps) {
             ))}
           </div>
         </div>
+        {post.image && (
+          <div className="blog-article-bg-image">
+            <Image src={post.image} alt={post.title} fill style={{ objectFit: 'cover', opacity: 0.3 }} priority />
+          </div>
+        )}
       </div>
       <div className="blog-article-body">
         <div className="container" style={{ maxWidth: '800px' }}>

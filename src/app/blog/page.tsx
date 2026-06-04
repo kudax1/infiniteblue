@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { getAllPosts } from '@/lib/blog';
 import { ArrowRight, Calendar, Clock } from 'lucide-react';
 import PageHero from '@/components/PageHero';
@@ -27,6 +28,11 @@ export default function BlogPage() {
                 href={`/blog/${post.slug}`}
                 className="blog-card"
               >
+                {post.image && (
+                  <div className="blog-card-image">
+                    <Image src={post.image} alt={post.title} fill style={{ objectFit: 'cover' }} />
+                  </div>
+                )}
                 <div className="blog-card-content">
                   <div className="blog-card-meta">
                     <span><Calendar size={14} /> {new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
