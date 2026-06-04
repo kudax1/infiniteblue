@@ -20,7 +20,7 @@ export default function PlinthCaseStudy() {
           </div>
           <div className="case-hero-image">
             <Image 
-              src="/plinth.png" 
+              src="/plinth-featured.png" 
               alt="Plinth Property Technologies Platform" 
               width={1200} 
               height={800} 
