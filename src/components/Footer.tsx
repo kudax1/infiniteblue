@@ -36,7 +36,6 @@ const Footer = () => {
                         <h4>Company</h4>
                         <ul>
                             <li><Link href="/company">About Us</Link></li>
-                            <li><Link href="/company">Careers</Link></li>
                             <li><Link href="/contact">Contact</Link></li>
                         </ul>
                     </div>
@@ -53,7 +52,7 @@ const Footer = () => {
                 <div className="footer-bottom">
                     <div>&copy; {new Date().getFullYear()} InfiniteBlue. All rights reserved.</div>
                     <div style={{ display: 'flex', gap: '16px' }}>
-                        <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-text-main)' }} aria-label="LinkedIn">
+                        <a href="https://www.linkedin.com/company/infinitebluelabs" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-text-main)' }} aria-label="LinkedIn">
                             <Linkedin size={20} />
                         </a>
                     </div>
