@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { ArrowRight, Globe } from 'lucide-react';
 
 const FeaturedWork = () => {
@@ -38,10 +39,11 @@ const FeaturedWork = () => {
             image: "/plinth-featured.png",
             links: [
                 {
-                    label: "View Platform",
-                    url: "https://plinth-marketing-dev-sjm37owltq-bq.a.run.app",
+                    label: "Read Case Study",
+                    url: "/work/plinth",
                     primary: true,
-                    icon: <Globe size={16} />
+                    internal: true,
+                    icon: <ArrowRight size={16} />
                 }
             ]
         }
@@ -74,18 +76,31 @@ const FeaturedWork = () => {
                                 <p className="portfolio-desc">{project.description}</p>
                                 
                                 <div className="portfolio-actions">
-                                    {project.links.map((link, i) => (
-                                        <a 
-                                            key={i} 
-                                            href={link.url} 
-                                            target="_blank" 
-                                            rel="noopener noreferrer" 
-                                            className={`btn ${link.primary ? '' : 'btn-secondary'}`}
-                                            style={{ display: 'flex', alignItems: 'center', gap: '8px' }}
-                                        >
-                                            {link.icon} {link.label} {link.primary && <ArrowRight size={16} />}
-                                        </a>
-                                    ))}
+                                    {project.links.map((link: any, i) => {
+                                        const buttonStyle = { display: 'flex', alignItems: 'center', gap: '8px' };
+                                        const className = `btn ${link.primary ? '' : 'btn-secondary'}`;
+                                        
+                                        if (link.internal) {
+                                            return (
+                                                <Link key={i} href={link.url} className={className} style={buttonStyle}>
+                                                    {link.icon} {link.label}
+                                                </Link>
+                                            );
+                                        }
+
+                                        return (
+                                            <a 
+                                                key={i} 
+                                                href={link.url} 
+                                                target="_blank" 
+                                                rel="noopener noreferrer" 
+                                                className={className}
+                                                style={buttonStyle}
+                                            >
+                                                {link.icon} {link.label} {link.primary && !link.internal && <ArrowRight size={16} />}
+                                            </a>
+                                        );
+                                    })}
                                 </div>
                             </div>
                         </div>
