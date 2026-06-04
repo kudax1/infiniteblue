@@ -8,7 +8,7 @@ export default function NotFound() {
         <h1 style={{ fontSize: '72px', marginBottom: '24px', color: 'var(--color-primary)' }}>404</h1>
         <h2 style={{ fontSize: '32px', marginBottom: '16px' }}>Page not found</h2>
         <p style={{ color: 'var(--color-text-main)', fontSize: '18px', marginBottom: '32px', maxWidth: '500px', margin: '0 auto 32px' }}>
-          Sorry, we couldn&apos;t find the page you're looking for. It might have been moved or doesn't exist.
+          Sorry, we couldn&apos;t find the page you&apos;re looking for. It might have been moved or doesn't exist.
         </p>
         <Link href="/" className="btn">
           <ArrowLeft size={18} /> Back to Home
