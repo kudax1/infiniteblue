@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Infinite Blue | Elite Software Development",
+  title: "InfiniteBlue | Elite Software Development",
   description: "Software architecture for ambitious enterprises. We co-create exceptional web, iOS, Android, and Harmony OS applications.",
   openGraph: {
     images: [{
@@ -23,6 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <script src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || 'dummy_key'}`} async defer></script>
         <div className="app-container">
           <Navbar />
           <main>{children}</main>

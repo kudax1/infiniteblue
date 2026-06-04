@@ -3,21 +3,21 @@ import { Quote } from 'lucide-react';
 const Testimonials = () => {
     const testimonials = [
         {
-            quote: "Infinite Blue transformed our legacy systems into a modern, scalable platform. Their engineering rigour and commitment to uptime has been exceptional.",
-            name: "Sarah M.",
-            client: "Rand Water",
-            role: "Head of IT",
-            initials: "SM"
-        },
-        {
-            quote: "Working with Infinite Blue felt like having a senior tech team in-house. They delivered our marketing platform on time and exceeded every expectation.",
-            name: "David T.",
+            quote: "Working with InfiniteBlue felt like having a senior tech team in-house. They delivered our marketing platform on time and exceeded every expectation.",
+            name: "Noah Stanger",
             client: "Plinth",
             role: "Managing Director",
-            initials: "DT"
+            initials: "NS"
         },
         {
-            quote: "From architecture to deployment, Infinite Blue brought a level of professionalism and technical depth that's rare to find. They're our go-to technology partner.",
+            quote: "InfiniteBlue built our mobile app from the ground up and delivered a polished product that our investors love. Their attention to detail and reliability is unmatched.",
+            name: "Musi Skosana",
+            client: "MSM Property",
+            role: "Founder",
+            initials: "MS"
+        },
+        {
+            quote: "From architecture to deployment, InfiniteBlue brought a level of professionalism and technical depth that's rare to find. They're our go-to technology partner.",
             name: "Elena R.",
             client: "Alsitype",
             role: "Operations Director",

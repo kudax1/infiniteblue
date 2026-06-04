@@ -1,0 +1,15 @@
+# Firebase App Hosting Configuration
+env:
+  - variable: NEXT_PUBLIC_RECAPTCHA_SITE_KEY
+    availability:
+      - BUILD
+      - RUNTIME
+  - variable: RECAPTCHA_SECRET_KEY
+    availability:
+      - RUNTIME
+  - variable: GMAIL_USER
+    availability:
+      - RUNTIME
+  - variable: GMAIL_APP_PASSWORD
+    availability:
+      - RUNTIME

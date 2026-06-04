@@ -28,7 +28,7 @@ const Navbar = () => {
         <nav className={`navbar ${isDarkNav ? 'navbar-dark' : ''}`} style={{ background: scrolled ? 'rgba(255, 255, 255, 0.9)' : 'transparent', borderBottomColor: scrolled ? 'rgba(0,0,0,0.05)' : 'transparent' }}>
             <div className="container navbar-container">
                 <a href="/" className="brand">
-                    <img src="/logo.webp" alt="Infinite Blue" style={{ height: '32px' }} />
+                    <img src="/logo.webp" alt="InfiniteBlue" style={{ height: '32px' }} />
                 </a>
                 
                 {/* Desktop Nav */}

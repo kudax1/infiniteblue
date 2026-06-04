@@ -8,7 +8,6 @@ const FeaturedWork = () => {
             category: "AI Integration & Web App",
             description: "A smart, conversational AI agent for automated bookings and customer service. Built to reduce administrative overhead and improve client response times.",
             image: "/instabook.png",
-            tags: ["Next.js", "OpenAI", "WebSockets"],
             links: [
                 {
                     label: "View Live Agent",
@@ -22,20 +21,13 @@ const FeaturedWork = () => {
             title: "MSM Property Fund",
             category: "Native Mobile App",
             description: "A secure, high-performance mobile application for property investors to manage portfolios, track growth, and explore premium real estate on the go.",
-            image: "/msm_mockup_landscape.png",
-            tags: ["React Native", "Firebase", "iOS", "Android"],
+            image: "/msm-featured.png",
             links: [
                 {
-                    label: "App Store",
-                    url: "https://apps.apple.com/za/app/msm/id6468573266",
-                    primary: false,
-                    icon: <Smartphone size={16} />
-                },
-                {
-                    label: "Google Play",
-                    url: "https://play.google.com/store/apps/details?id=com.msmpropertyfund.msm&hl=en_ZA",
-                    primary: false,
-                    icon: <Smartphone size={16} />
+                    label: "View Platform",
+                    url: "https://msmproperty.co.za/app/",
+                    primary: true,
+                    icon: <Globe size={16} />
                 }
             ]
         },
@@ -43,8 +35,7 @@ const FeaturedWork = () => {
             title: "Plinth Commercial Real Estate",
             category: "Property Management SaaS",
             description: "Institutional-grade underwriting, capital stack modelling, and due diligence tools purpose-built for commercial property professionals.",
-            image: "/plinth.png",
-            tags: ["React", "TypeScript", "GCP"],
+            image: "/plinth-featured.png",
             links: [
                 {
                     label: "View Platform",
@@ -81,12 +72,6 @@ const FeaturedWork = () => {
                                 <span className="portfolio-category">{project.category}</span>
                                 <h3 className="portfolio-title">{project.title}</h3>
                                 <p className="portfolio-desc">{project.description}</p>
-                                
-                                <div className="portfolio-tags">
-                                    {project.tags.map((tag, i) => (
-                                        <span key={i} className="portfolio-tag">{tag}</span>
-                                    ))}
-                                </div>
                                 
                                 <div className="portfolio-actions">
                                     {project.links.map((link, i) => (

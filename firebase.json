@@ -1,0 +1,11 @@
+{
+  "apphosting": {
+    "backendId": "infiniteblue",
+    "rootDir": "/",
+    "ignore": [
+      "node_modules",
+      ".git",
+      "firebase-debug.log"
+    ]
+  }
+}

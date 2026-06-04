@@ -9,7 +9,7 @@ const Footer = () => {
                 <div className="footer-grid">
                     <div className="footer-brand">
                         <Link href="/" className="brand">
-                            <img src="/logo.webp" alt="Infinite Blue" style={{ height: '28px' }} />
+                            <img src="/logo.webp" alt="InfiniteBlue" style={{ height: '28px' }} />
                         </Link>
                         <p style={{ color: 'var(--color-text-main)' }}>
                             Software infrastructure for ambitious businesses.<br />
@@ -52,7 +52,7 @@ const Footer = () => {
                 </div>
 
                 <div className="footer-bottom">
-                    <div>&copy; {new Date().getFullYear()} Infinite Blue. All rights reserved.</div>
+                    <div>&copy; {new Date().getFullYear()} InfiniteBlue. All rights reserved.</div>
                     <div style={{ display: 'flex', gap: '16px' }}>
                         <a href="https://linkedin.com/company/infinite-blue-placeholder" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-text-main)' }} aria-label="LinkedIn">
                             <Linkedin size={20} />

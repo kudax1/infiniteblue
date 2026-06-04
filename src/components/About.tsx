@@ -14,7 +14,7 @@ const About = () => {
                             Building the digital infrastructure of tomorrow.
                         </h2>
                         <p style={{ fontSize: 'var(--font-lg, 18px)', color: 'var(--color-text-main)', marginBottom: '24px' }}>
-                            At Infinite Blue, we are a collective of elite software engineers, cloud architects, and product designers dedicated to solving complex business challenges through elegant technology.
+                            At InfiniteBlue, we are a collective of elite software engineers, cloud architects, and product designers dedicated to solving complex business challenges through elegant technology.
                         </p>
                         <p style={{ fontSize: 'var(--font-lg, 18px)', color: 'var(--color-text-main)', marginBottom: '40px' }}>
                             Founded on the principle of engineering excellence, we partner with visionary companies—from innovative startups to global enterprises—to build scalable, resilient, and secure applications. Our mission is to transform ambitious ideas into robust technical reality.

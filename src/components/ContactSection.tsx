@@ -6,19 +6,66 @@ const ContactSection = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsSubmitting(true);
-        // Simulate network request
-        setTimeout(() => {
+        const form = e.target as HTMLFormElement;
+        
+        try {
+            // Get reCAPTCHA token (v3 is invisible)
+            const token = await new Promise<string>((resolve, reject) => {
+                const grecaptcha = (window as any).grecaptcha;
+                if (!grecaptcha) {
+                    resolve(''); // Fallback if script didn't load
+                    return;
+                }
+                grecaptcha.ready(async () => {
+                    try {
+                        const token = await grecaptcha.execute(process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || 'dummy_key', { action: 'submit' });
+                        resolve(token);
+                    } catch (err) {
+                        reject(err);
+                    }
+                });
+            });
+
+            const formData = new FormData(form);
+            const data = {
+                firstName: formData.get('firstName'),
+                lastName: formData.get('lastName'),
+                email: formData.get('email'),
+                phone: formData.get('phone'),
+                company: formData.get('company'),
+                services: formData.getAll('services'),
+                description: formData.get('description'),
+                honeypot: formData.get('honeypot'),
+                recaptchaToken: token
+            };
+
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+                setIsSuccess(true);
+                setTimeout(() => {
+                    setIsSuccess(false);
+                    form.reset();
+                }, 5000);
+            } else {
+                console.error('Contact error:', result.error);
+                alert(`Error: ${result.error}`);
+            }
+        } catch (error) {
+            console.error('Submission failed', error);
+            alert('Something went wrong. Please try again later.');
+        } finally {
             setIsSubmitting(false);
-            setIsSuccess(true);
-            // Reset form after a few seconds
-            setTimeout(() => {
-                setIsSuccess(false);
-                (e.target as HTMLFormElement).reset();
-            }, 5000);
-        }, 1500);
+        }
     };
 
     return (
@@ -106,6 +153,12 @@ const ContactSection = () => {
                                     <textarea id="description" name="description" className="form-textarea" placeholder="Tell us a bit about what you're looking to build..."></textarea>
                                 </div>
 
+                                {/* Honeypot field - hidden from humans, filled by bots */}
+                                <div className="form-group" style={{ display: 'none' }} aria-hidden="true">
+                                    <label htmlFor="honeypot">Leave this field blank</label>
+                                    <input type="text" id="honeypot" name="honeypot" tabIndex={-1} autoComplete="off" />
+                                </div>
+
                                 <div className="form-group" style={{ marginBottom: '32px' }}>
                                     <label className="checkbox-label" style={{ fontSize: '13px', color: 'var(--color-text-main)' }}>
                                         <input type="checkbox" required />
@@ -182,7 +235,7 @@ const ContactSection = () => {
                                 <div>
                                     <h4>Connect on LinkedIn</h4>
                                     <a href="https://linkedin.com/company/infinite-blue-placeholder" target="_blank" rel="noopener noreferrer">
-                                        Infinite Blue
+                                        InfiniteBlue
                                     </a>
                                 </div>
                             </div>
