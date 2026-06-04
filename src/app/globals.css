@@ -1091,6 +1091,9 @@ ul {
   line-height: 1.2;
   margin-bottom: 24px;
   letter-spacing: -1px;
+  color: white;
+  position: relative;
+  z-index: 2;
 }
 .blog-article-meta {
   display: flex;

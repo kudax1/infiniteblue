@@ -25,7 +25,7 @@ const Navbar = () => {
     const toggleMobileMenu = () => setMobileMenuOpen(!mobileMenuOpen);
 
     const darkNavPaths = ['/', '/services', '/company'];
-    const isDarkNav = darkNavPaths.includes(pathname) && !scrolled;
+    const isDarkNav = (darkNavPaths.includes(pathname) || pathname.startsWith('/blog/') || pathname.startsWith('/work/')) && !scrolled;
 
     return (
         <nav className={`navbar ${isDarkNav ? 'navbar-dark' : ''}`} style={{ background: scrolled ? 'rgba(255, 255, 255, 0.9)' : 'transparent', borderBottomColor: scrolled ? 'rgba(0,0,0,0.05)' : 'transparent' }}>
