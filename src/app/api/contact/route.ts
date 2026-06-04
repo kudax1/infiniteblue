@@ -47,9 +47,9 @@ export async function POST(request: Request) {
 
         // 4. Construct Email
         const mailOptions = {
-            from: `"InfiniteBlue Website" <${user}>`,
+            from: `"InfiniteBlue Website" <info@infinitebluelabs.com>`,
             to: user, // Send to yourself
-            replyTo: email,
+            replyTo: 'info@infinitebluelabs.com',
             subject: `New Lead: ${firstName} ${lastName} ${company ? `(${company})` : ''}`,
             html: `
                 <h2>New Contact Form Submission</h2>
