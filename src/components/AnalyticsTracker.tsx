@@ -1,12 +1,13 @@
 "use client";
 import { useEffect } from 'react';
-import { analytics } from '@/lib/firebase';
+import { initAnalytics } from '@/lib/firebase';
 
 export default function AnalyticsTracker() {
   useEffect(() => {
-    // If analytics initialized successfully, we're good
-    if (analytics) {
-      console.log('Firebase Analytics initialized successfully.');
+    // Only initialize analytics if the user has already consented
+    const consent = localStorage.getItem('ib_cookie_consent');
+    if (consent === 'true') {
+      initAnalytics();
     }
   }, []);
 

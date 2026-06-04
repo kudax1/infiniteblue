@@ -20,7 +20,7 @@ const About = () => {
                             Founded on the principle of engineering excellence, we partner with visionary companies—from innovative startups to global enterprises—to build scalable, resilient, and secure applications. Our mission is to transform ambitious ideas into robust technical reality.
                         </p>
 
-                        <div style={{ display: 'flex', gap: '32px' }}>
+                        <div style={{ display: 'flex', gap: '32px', flexWrap: 'wrap' }}>
                             <div>
                                 <div style={{ fontSize: 'var(--font-h3, 32px)', fontWeight: 800, color: 'var(--color-primary)', marginBottom: '8px' }}>99.9%</div>
                                 <div style={{ fontSize: 'var(--font-sm, 14px)', color: 'var(--color-text-main)', fontWeight: 500 }}>Uptime SLA</div>

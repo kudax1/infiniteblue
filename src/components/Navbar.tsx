@@ -36,7 +36,6 @@ const Navbar = () => {
                 
                 <div className="nav-links">
                     <Link href="/services">Services</Link>
-                    <Link href="/#services">Features</Link>
                     <Link href="/company">Company</Link>
                     <Link href="/blog">Blog</Link>
                 </div>
@@ -55,7 +54,6 @@ const Navbar = () => {
                 <div className="mobile-nav">
                     <div className="mobile-nav-links">
                         <Link href="/services" onClick={toggleMobileMenu}>Services</Link>
-                        <Link href="/#services" onClick={toggleMobileMenu}>Features</Link>
                         <Link href="/company" onClick={toggleMobileMenu}>Company</Link>
                         <Link href="/blog" onClick={toggleMobileMenu}>Blog</Link>
                         <Link href="/contact" className="btn btn-secondary" onClick={toggleMobileMenu} style={{marginTop: '16px'}}>Contact Sales &rarr;</Link>

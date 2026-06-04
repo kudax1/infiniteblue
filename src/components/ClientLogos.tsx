@@ -3,9 +3,9 @@ import Image from 'next/image';
 const ClientLogos = () => {
     // We use a double list to create a seamless infinite scrolling effect
     const clients = [
-        { name: "Instabook AI", url: "#", logo: "/instabook-logo.png" },
-        { name: "MSM Property", displayText: "Property", url: "https://msmproperties.co.za/", logo: "/msm-logo.png" },
-        { name: "Plinth", url: "https://plinth-marketing-dev-sjm37owltq-bq.a.run.app/" },
+        { name: "Instabook AI", url: "https://instabookagent.com/", logo: "/instabook-logo.png" },
+        { name: "MSM Property", displayText: "Property", url: "https://msmproperty.co.za/", logo: "/msm-logo.png" },
+        { name: "Plinth", url: "/work/plinth" },
         { name: "Lidwala", url: "https://www.lidwala.com", logo: "/lidwala-logo.png" },
         { name: "Rand Water", url: "https://www.randwater.co.za", logo: "/randwater-logo.png", invert: true },
         { name: "Alsitype", url: "https://www.alsitype.com", logo: "/alsitype-logo.png" }
@@ -14,7 +14,7 @@ const ClientLogos = () => {
     return (
         <section className="client-logos-section">
             <div className="container" style={{ maxWidth: '100%' }}>
-                <h3 className="client-logos-title">Trusted by industry leaders</h3>
+                <h2 className="client-logos-title">Trusted by industry leaders</h2>
                 
                 <div className="marquee-wrapper">
                     {/* First instance of the list */}

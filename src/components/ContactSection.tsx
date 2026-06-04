@@ -38,8 +38,11 @@ const ContactSection = () => {
                 phone: formData.get('phone'),
                 company: formData.get('company'),
                 services: formData.getAll('services'),
+                budget: formData.get('budget'),
+                timeline: formData.get('timeline'),
+                referral: formData.get('referral'),
                 description: formData.get('description'),
-                honeypot: formData.get('honeypot'),
+                companyUrl: formData.get('company_url'),
                 recaptchaToken: token
             };
 
@@ -73,7 +76,7 @@ const ContactSection = () => {
         <section className="contact-section">
             <div className="container">
                 <div style={{ marginBottom: '64px', maxWidth: '600px' }}>
-                    <h1 style={{ fontSize: '48px', letterSpacing: '-1px', marginBottom: '16px' }}>Let&apos;s talk about your project</h1>
+                    <h1 style={{ fontSize: 'clamp(32px, 5vw, 48px)', letterSpacing: '-1px', marginBottom: '16px' }}>Let&apos;s talk about your project</h1>
                     <p style={{ fontSize: '20px', color: 'var(--color-text-main)' }}>
                         Fill out the form below and we&apos;ll get back to you within 24 hours.
                     </p>
@@ -119,8 +122,8 @@ const ContactSection = () => {
                                     <input type="text" id="company" name="company" className="form-input" placeholder="Your Company Ltd" />
                                 </div>
 
-                                <div className="form-group">
-                                    <label className="form-label">Services of Interest</label>
+                                <fieldset className="form-group" style={{ border: 'none', padding: 0, margin: '0 0 24px' }}>
+                                    <legend className="form-label">Services of Interest</legend>
                                     <div className="checkbox-group">
                                         <label className="checkbox-label">
                                             <input type="checkbox" name="services" value="Web App" />
@@ -147,22 +150,58 @@ const ContactSection = () => {
                                             Other
                                         </label>
                                     </div>
-                                </div>
+                                </fieldset>
 
                                 <div className="form-group">
                                     <label className="form-label" htmlFor="description">Project Description</label>
                                     <textarea id="description" name="description" className="form-textarea" placeholder="Tell us a bit about what you&apos;re looking to build..."></textarea>
                                 </div>
 
+                                <div className="form-row">
+                                    <div className="form-group">
+                                        <label className="form-label" htmlFor="budget">Budget Range</label>
+                                        <select id="budget" name="budget" className="form-input">
+                                            <option value="">Select a range</option>
+                                            <option value="< R100k">&lt; R100,000</option>
+                                            <option value="R100k–R500k">R100,000 – R500,000</option>
+                                            <option value="R500k–R1M">R500,000 – R1,000,000</option>
+                                            <option value="R1M+">R1,000,000+</option>
+                                            <option value="Not sure">Not sure yet</option>
+                                        </select>
+                                    </div>
+                                    <div className="form-group">
+                                        <label className="form-label" htmlFor="timeline">Timeline</label>
+                                        <select id="timeline" name="timeline" className="form-input">
+                                            <option value="">When do you need this?</option>
+                                            <option value="ASAP">As soon as possible</option>
+                                            <option value="1–3 months">1–3 months</option>
+                                            <option value="3–6 months">3–6 months</option>
+                                            <option value="Exploring">Just exploring</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div className="form-group">
+                                    <label className="form-label" htmlFor="referral">How did you hear about us?</label>
+                                    <select id="referral" name="referral" className="form-input">
+                                        <option value="">Select an option</option>
+                                        <option value="Google Search">Google Search</option>
+                                        <option value="LinkedIn">LinkedIn</option>
+                                        <option value="Referral">Referral / Word of mouth</option>
+                                        <option value="Blog">Blog article</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+
                                 {/* Honeypot field - hidden from humans, filled by bots */}
-                                <div className="form-group" style={{ display: 'none' }} aria-hidden="true">
-                                    <label htmlFor="honeypot">Leave this field blank</label>
-                                    <input type="text" id="honeypot" name="honeypot" tabIndex={-1} autoComplete="off" />
+                                <div className="form-group" style={{ position: 'absolute', left: '-9999px', top: '-9999px' }} aria-hidden="true">
+                                    <label htmlFor="company_url">Company Website</label>
+                                    <input type="text" id="company_url" name="company_url" tabIndex={-1} autoComplete="off" />
                                 </div>
 
                                 <div className="form-group" style={{ marginBottom: '32px' }}>
-                                    <label className="checkbox-label" style={{ fontSize: '13px', color: 'var(--color-text-main)' }}>
-                                        <input type="checkbox" required />
+                                    <label className="checkbox-label" htmlFor="consent" style={{ fontSize: '13px', color: 'var(--color-text-main)' }}>
+                                        <input type="checkbox" id="consent" required />
                                         I agree to the processing of my personal data in accordance with the Privacy Policy.
                                     </label>
                                 </div>
@@ -235,7 +274,7 @@ const ContactSection = () => {
                                 </div>
                                 <div>
                                     <h4>Connect on LinkedIn</h4>
-                                    <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
+                                    <a href="https://www.linkedin.com/company/infinitebluelabs" target="_blank" rel="noopener noreferrer">
                                         InfiniteBlue
                                     </a>
                                 </div>

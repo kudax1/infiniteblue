@@ -3,13 +3,14 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Plinth Case Study | InfiniteBlue',
+  title: 'Plinth Case Study',
   description: 'How we built an institutional-grade underwriting and capital stack modelling platform for South African commercial property professionals.',
+  alternates: { canonical: 'https://infiniteblue.africa/work/plinth' },
 };
 
 export default function PlinthCaseStudy() {
   return (
-    <main>
+    <>
       <section className="case-hero">
         <div className="container">
           <div className="case-hero-content">
@@ -103,6 +104,6 @@ export default function PlinthCaseStudy() {
           </div>
         </div>
       </section>
-    </main>
+    </>
   );
 }

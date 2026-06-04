@@ -11,15 +11,34 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-family" });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://infiniteblue.africa'),
-  title: "InfiniteBlue | Elite Software Development",
+  title: {
+    default: "InfiniteBlue | Elite Software Development",
+    template: "%s | InfiniteBlue",
+  },
   description: "Software architecture for ambitious enterprises. We co-create exceptional web, iOS, Android, and Harmony OS applications.",
+  alternates: {
+    canonical: 'https://infiniteblue.africa',
+  },
   openGraph: {
+    type: 'website',
+    siteName: 'InfiniteBlue',
+    locale: 'en_ZA',
+    url: 'https://infiniteblue.africa',
+    title: 'InfiniteBlue | Elite Software Development',
+    description: 'Software architecture for ambitious enterprises. We co-create exceptional web, iOS, Android, and Harmony OS applications.',
     images: [{
       url: '/opengraph-image.png',
       width: 1200,
       height: 630,
-    }]
-  }
+      alt: 'InfiniteBlue – Elite Software Development',
+    }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'InfiniteBlue | Elite Software Development',
+    description: 'Software architecture for ambitious enterprises. We co-create exceptional web, iOS, Android, and Harmony OS applications.',
+    images: ['/opengraph-image.png'],
+  },
 };
 
 export default function RootLayout({
@@ -33,6 +52,9 @@ export default function RootLayout({
     "name": "InfiniteBlue",
     "url": "https://infiniteblue.africa",
     "logo": "https://infiniteblue.africa/logo.webp",
+    "sameAs": [
+      "https://www.linkedin.com/company/infinitebluelabs"
+    ],
     "contactPoint": {
       "@type": "ContactPoint",
       "email": "info@infinitebluelabs.com",

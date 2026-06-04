@@ -259,3 +259,66 @@
 .p-2 { top: 90%; left: 70%; animation-delay: 2s; }
 .p-3 { top: 70%; left: 50%; animation-delay: 4s; }
 .p-4 { top: 60%; left: 80%; animation-delay: 6s; }
+
+/* Responsive: Hero Graphic */
+@media (max-width: 900px) {
+  .dark-hero {
+    padding-top: 140px;
+    padding-bottom: 60px;
+  }
+
+  .dark-hero h1 {
+    font-size: 40px;
+    letter-spacing: -1px;
+  }
+
+  .hero-graphic-container {
+    height: 350px;
+  }
+
+  .command-center {
+    transform: scale(0.75);
+    transform-origin: center center;
+  }
+
+  .badge-secure,
+  .badge-scalable,
+  .badge-automated {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .dark-hero {
+    padding-top: 120px;
+    padding-bottom: 40px;
+  }
+
+  .dark-hero h1 {
+    font-size: 32px;
+  }
+
+  .hero-graphic-container {
+    height: 280px;
+  }
+
+  .command-center {
+    transform: scale(0.55);
+  }
+
+  .conn-card {
+    padding: 8px 12px;
+    font-size: 11px;
+  }
+
+  .core-hub {
+    width: 90px;
+    height: 90px;
+    font-size: 9px;
+  }
+
+  .infinity-path {
+    width: 400px;
+    height: 200px;
+  }
+}

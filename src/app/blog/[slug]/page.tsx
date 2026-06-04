@@ -17,8 +17,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { slug } = await params;
   const post = await getPostBySlug(slug);
   return {
-    title: `${post.title} | InfiniteBlue Blog`,
+    title: post.title,
     description: post.description,
+    alternates: { canonical: `https://infiniteblue.africa/blog/${slug}` },
     openGraph: {
       title: post.title,
       description: post.description,
@@ -26,6 +27,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       publishedTime: post.date,
       authors: [post.author],
       images: post.image ? [{ url: post.image }] : undefined,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.description,
+      images: post.image ? [post.image] : undefined,
     },
   };
 }
@@ -67,7 +74,7 @@ export default async function BlogPostPage({ params }: PageProps) {
           />
           <div style={{ marginTop: '64px', paddingTop: '32px', borderTop: '1px solid rgba(0,0,0,0.1)', textAlign: 'center' }}>
             <p style={{ color: 'var(--color-text-main)', marginBottom: '16px' }}>
-              Interested in building with Flutter? We&apos;d love to discuss your project.
+              Have a project in mind? We&apos;d love to discuss how we can help.
             </p>
             <Link href="/contact" className="btn">
               Get in Touch &rarr;

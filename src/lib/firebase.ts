@@ -1,7 +1,7 @@
 "use client";
 
 import { initializeApp, getApps } from "firebase/app";
-import { getAnalytics, isSupported } from "firebase/analytics";
+import { getAnalytics, isSupported, Analytics } from "firebase/analytics";
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -16,9 +16,12 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0];
 
-// Initialize Analytics conditionally (only runs in browser and if supported)
-let analytics: any = null;
-if (typeof window !== "undefined") {
+// Analytics is only initialized after user grants consent
+let analytics: Analytics | null = null;
+
+export function initAnalytics() {
+  if (typeof window === "undefined" || analytics) return;
+
   isSupported().then((supported) => {
     if (supported) {
       analytics = getAnalytics(app);

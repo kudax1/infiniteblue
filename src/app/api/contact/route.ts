@@ -4,10 +4,10 @@ import nodemailer from 'nodemailer';
 export async function POST(request: Request) {
     try {
         const body = await request.json();
-        const { firstName, lastName, email, phone, company, services, description, recaptchaToken, honeypot } = body;
+        const { firstName, lastName, email, phone, company, services, budget, timeline, referral, description, recaptchaToken, companyUrl } = body;
 
-        // 1. Check honeypot (bots will fill this hidden field)
-        if (honeypot) {
+        // 1. Check honeypot (bots will fill this hidden field that looks like "company_url")
+        if (companyUrl) {
             console.log("Honeypot filled. Rejecting as bot.");
             return NextResponse.json({ success: false, error: 'Spam detected' }, { status: 400 });
         }
@@ -48,8 +48,8 @@ export async function POST(request: Request) {
         // 4. Construct Email
         const mailOptions = {
             from: `"InfiniteBlue Website" <info@infinitebluelabs.com>`,
-            to: user, // Send to yourself
-            replyTo: 'info@infinitebluelabs.com',
+            to: user,
+            replyTo: email || 'info@infinitebluelabs.com',
             subject: `New Lead: ${firstName} ${lastName} ${company ? `(${company})` : ''}`,
             html: `
                 <h2>New Contact Form Submission</h2>
@@ -58,6 +58,9 @@ export async function POST(request: Request) {
                 <p><strong>Phone:</strong> ${phone || 'N/A'}</p>
                 <p><strong>Company:</strong> ${company || 'N/A'}</p>
                 <p><strong>Services:</strong> ${services?.join(', ') || 'N/A'}</p>
+                <p><strong>Budget:</strong> ${budget || 'N/A'}</p>
+                <p><strong>Timeline:</strong> ${timeline || 'N/A'}</p>
+                <p><strong>Referral Source:</strong> ${referral || 'N/A'}</p>
                 <h3>Project Description:</h3>
                 <p>${description?.replace(/\n/g, '<br>') || 'N/A'}</p>
             `

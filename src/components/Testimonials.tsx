@@ -17,7 +17,7 @@ const Testimonials = () => {
             initials: "MS"
         },
         {
-            quote: "From architecture to deployment, InfiniteBlue brought a level of professionalism and technical depth that's rare to find. They&apos;re our go-to technology partner.",
+            quote: "From architecture to deployment, InfiniteBlue brought a level of professionalism and technical depth that\u2019s rare to find. They\u2019re our go-to technology partner.",
             name: "Elena R.",
             client: "Alsitype",
             role: "Operations Director",

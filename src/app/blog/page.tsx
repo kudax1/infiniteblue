@@ -6,8 +6,9 @@ import { ArrowRight, Calendar, Clock } from 'lucide-react';
 import PageHero from '@/components/PageHero';
 
 export const metadata: Metadata = {
-  title: 'Blog | InfiniteBlue',
+  title: 'Blog & Insights',
   description: 'Engineering insights, technical deep-dives, and perspectives on modern software development from the InfiniteBlue team.',
+  alternates: { canonical: 'https://infiniteblue.africa/blog' },
 };
 
 export default function BlogPage() {

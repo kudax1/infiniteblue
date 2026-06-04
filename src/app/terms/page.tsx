@@ -1,17 +1,18 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Terms of Service | InfiniteBlue',
+  title: 'Terms of Service',
   description: 'Terms of Service for InfiniteBlue Software Agency',
+  alternates: { canonical: 'https://infiniteblue.africa/terms' },
 };
 
 export default function TermsPage() {
   return (
     <section className="section" style={{ minHeight: '80vh', paddingTop: '160px' }}>
       <div className="container" style={{ maxWidth: '800px' }}>
-        <h1 style={{ fontSize: '48px', marginBottom: '24px' }}>Terms of Service</h1>
+        <h1 style={{ fontSize: 'clamp(32px, 5vw, 48px)', marginBottom: '24px' }}>Terms of Service</h1>
         <div style={{ color: 'var(--color-text-main)', fontSize: '16px', display: 'flex', flexDirection: 'column', gap: '24px' }}>
-          <p>Last updated: {new Date().toLocaleDateString()}</p>
+          <p>Last updated: 4 June 2026</p>
           
           <h2>1. Agreement to Terms</h2>
           <p>These Terms of Service constitute a legally binding agreement made between you and InfiniteBlue, concerning your access to and use of our website as well as any other media form, media channel, mobile website or mobile application related, linked, or otherwise connected thereto.</p>
