@@ -14,6 +14,7 @@ const ContactSection = () => {
         try {
             // Get reCAPTCHA token (v3 is invisible)
             const token = await new Promise<string>((resolve, reject) => {
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 const grecaptcha = (window as any).grecaptcha;
                 if (!grecaptcha) {
                     resolve(''); // Fallback if script didn't load
@@ -72,9 +73,9 @@ const ContactSection = () => {
         <section className="contact-section">
             <div className="container">
                 <div style={{ marginBottom: '64px', maxWidth: '600px' }}>
-                    <h1 style={{ fontSize: '48px', letterSpacing: '-1px', marginBottom: '16px' }}>Let's talk about your project</h1>
+                    <h1 style={{ fontSize: '48px', letterSpacing: '-1px', marginBottom: '16px' }}>Let&apos;s talk about your project</h1>
                     <p style={{ fontSize: '20px', color: 'var(--color-text-main)' }}>
-                        Fill out the form below and we'll get back to you within 24 hours.
+                        Fill out the form below and we&apos;ll get back to you within 24 hours.
                     </p>
                 </div>
 
@@ -150,7 +151,7 @@ const ContactSection = () => {
 
                                 <div className="form-group">
                                     <label className="form-label" htmlFor="description">Project Description</label>
-                                    <textarea id="description" name="description" className="form-textarea" placeholder="Tell us a bit about what you're looking to build..."></textarea>
+                                    <textarea id="description" name="description" className="form-textarea" placeholder="Tell us a bit about what you&apos;re looking to build..."></textarea>
                                 </div>
 
                                 {/* Honeypot field - hidden from humans, filled by bots */}
@@ -192,7 +193,7 @@ const ContactSection = () => {
                                 </div>
                                 <div>
                                     <h4>Prefer a conversation?</h4>
-                                    <p>Drop us an email and we'll get back to you within 24 hours.</p>
+                                    <p>Drop us an email and we&apos;ll get back to you within 24 hours.</p>
                                 </div>
                             </div>
                         </div>
@@ -225,7 +226,7 @@ const ContactSection = () => {
                                 </div>
                                 <div>
                                     <h4>Email Us</h4>
-                                    <a href="mailto:info@infiniteblue.africa">info@infiniteblue.africa</a>
+                                    <a href="mailto:info@infinitebluelabs.com">info@infinitebluelabs.com</a>
                                 </div>
                             </div>
                             <div className="contact-method">
@@ -234,7 +235,7 @@ const ContactSection = () => {
                                 </div>
                                 <div>
                                     <h4>Connect on LinkedIn</h4>
-                                    <a href="https://linkedin.com/company/infinite-blue-placeholder" target="_blank" rel="noopener noreferrer">
+                                    <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
                                         InfiniteBlue
                                     </a>
                                 </div>

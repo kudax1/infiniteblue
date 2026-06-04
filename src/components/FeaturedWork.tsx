@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { ArrowRight, Smartphone, Globe } from 'lucide-react';
+import { ArrowRight, Globe } from 'lucide-react';
 
 const FeaturedWork = () => {
     const projects = [

@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 const ClientLogos = () => {
     // We use a double list to create a seamless infinite scrolling effect
     const clients = [
@@ -19,7 +21,9 @@ const ClientLogos = () => {
                     <div className="marquee">
                         {clients.map((client, index) => (
                             <a href={client.url} target="_blank" rel="noopener noreferrer" key={`client-1-${index}`} className="client-logo" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '12px' }}>
-                                {client.logo && <img src={client.logo} alt={`${client.name} logo`} style={{ height: '32px', objectFit: 'contain', filter: client.invert ? 'invert(1) brightness(0)' : 'none' }} />}
+                                {client.logo && <div style={{ position: 'relative', height: '32px', width: '120px' }}>
+                                    <Image src={client.logo} alt={`${client.name} logo`} fill style={{ objectFit: 'contain', filter: client.invert ? 'invert(1) brightness(0)' : 'none' }} sizes="120px" />
+                                </div>}
                                 <span>{client.displayText !== undefined ? client.displayText : client.name}</span>
                             </a>
                         ))}
@@ -28,7 +32,9 @@ const ClientLogos = () => {
                     <div className="marquee" aria-hidden="true">
                         {clients.map((client, index) => (
                             <a href={client.url} target="_blank" rel="noopener noreferrer" key={`client-2-${index}`} className="client-logo" style={{ textDecoration: 'none', cursor: client.url === '#' ? 'default' : 'pointer', display: 'flex', alignItems: 'center', gap: '12px' }}>
-                                {client.logo && <img src={client.logo} alt={`${client.name} logo`} style={{ height: '32px', objectFit: 'contain', filter: client.invert ? 'invert(1) brightness(0)' : 'none' }} />}
+                                {client.logo && <div style={{ position: 'relative', height: '32px', width: '120px' }}>
+                                    <Image src={client.logo} alt={`${client.name} logo`} fill style={{ objectFit: 'contain', filter: client.invert ? 'invert(1) brightness(0)' : 'none' }} sizes="120px" />
+                                </div>}
                                 <span>{client.displayText !== undefined ? client.displayText : client.name}</span>
                             </a>
                         ))}

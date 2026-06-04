@@ -43,7 +43,7 @@ const About = () => {
                                 <h3 style={{ fontSize: 'var(--font-h4, 20px)', margin: 0 }}>Mission Driven</h3>
                             </div>
                             <p style={{ color: 'var(--color-text-main)', margin: 0, fontSize: 'var(--font-md, 15px)' }}>
-                                We don't focus on outputs; we focus on business outcomes. We measure our success by the growth and efficiency we unlock for our clients.
+                                We don&apos;t focus on outputs; we focus on business outcomes. We measure our success by the growth and efficiency we unlock for our clients.
                             </p>
                         </div>
 

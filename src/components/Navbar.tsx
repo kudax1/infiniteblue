@@ -2,6 +2,8 @@
 import { useEffect, useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { usePathname } from 'next/navigation';
+import Link from 'next/link';
+import Image from 'next/image';
 
 const SCROLL_THRESHOLD = 20;
 
@@ -27,18 +29,18 @@ const Navbar = () => {
     return (
         <nav className={`navbar ${isDarkNav ? 'navbar-dark' : ''}`} style={{ background: scrolled ? 'rgba(255, 255, 255, 0.9)' : 'transparent', borderBottomColor: scrolled ? 'rgba(0,0,0,0.05)' : 'transparent' }}>
             <div className="container navbar-container">
-                <a href="/" className="brand">
-                    <img src="/logo.webp" alt="InfiniteBlue" style={{ height: '32px' }} />
-                </a>
+                <Link href="/" className="brand">
+                    <Image src="/logo.webp" alt="InfiniteBlue" width={160} height={32} style={{ height: '32px', width: 'auto' }} priority />
+                </Link>
                 
                 {/* Desktop Nav */}
                 <div className="nav-links">
-                    <a href="/services">Services</a>
-                    <a href="/#features">Features</a>
-                    <a href="/company">Company</a>
+                    <Link href="/services">Services</Link>
+                    <Link href="/#services">Features</Link>
+                    <Link href="/company">Company</Link>
                 </div>
                 <div className="nav-cta">
-                    <a href="/contact" className="btn btn-secondary">Contact Sales &rarr;</a>
+                    <Link href="/contact" className="btn btn-secondary">Contact Sales &rarr;</Link>
                 </div>
 
                 {/* Mobile Toggle */}
@@ -51,10 +53,10 @@ const Navbar = () => {
             {mobileMenuOpen && (
                 <div className="mobile-nav">
                     <div className="mobile-nav-links">
-                        <a href="/services" onClick={toggleMobileMenu}>Services</a>
-                        <a href="/#features" onClick={toggleMobileMenu}>Features</a>
-                        <a href="/company" onClick={toggleMobileMenu}>Company</a>
-                        <a href="/contact" className="btn btn-secondary" onClick={toggleMobileMenu} style={{marginTop: '16px'}}>Contact Sales &rarr;</a>
+                        <Link href="/services" onClick={toggleMobileMenu}>Services</Link>
+                        <Link href="/#services" onClick={toggleMobileMenu}>Features</Link>
+                        <Link href="/company" onClick={toggleMobileMenu}>Company</Link>
+                        <Link href="/contact" className="btn btn-secondary" onClick={toggleMobileMenu} style={{marginTop: '16px'}}>Contact Sales &rarr;</Link>
                     </div>
                 </div>
             )}

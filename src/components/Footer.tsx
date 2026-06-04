@@ -1,6 +1,6 @@
-
 import { Linkedin } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const Footer = () => {
     return (
@@ -9,15 +9,15 @@ const Footer = () => {
                 <div className="footer-grid">
                     <div className="footer-brand">
                         <Link href="/" className="brand">
-                            <img src="/logo.webp" alt="InfiniteBlue" style={{ height: '28px' }} />
+                            <Image src="/logo.webp" alt="InfiniteBlue" width={140} height={28} style={{ height: '28px', width: 'auto' }} />
                         </Link>
                         <p style={{ color: 'var(--color-text-main)' }}>
                             Software infrastructure for ambitious businesses.<br />
                             Co-creating exceptional digital solutions.
                         </p>
                         <div style={{ marginTop: '24px' }}>
-                            <a href="mailto:info@infiniteblue.africa" style={{ color: 'var(--color-text-dark)', fontWeight: 600 }}>
-                                info@infiniteblue.africa
+                            <a href="mailto:info@infinitebluelabs.com" style={{ color: 'var(--color-text-dark)', fontWeight: 600 }}>
+                                info@infinitebluelabs.com
                             </a>
                         </div>
                     </div>
@@ -36,8 +36,7 @@ const Footer = () => {
                         <h4>Company</h4>
                         <ul>
                             <li><Link href="/company">About Us</Link></li>
-                            <li><Link href="#">Careers</Link></li>
-                            <li><Link href="#">Blog</Link></li>
+                            <li><Link href="/company">Careers</Link></li>
                             <li><Link href="/contact">Contact</Link></li>
                         </ul>
                     </div>
@@ -45,8 +44,8 @@ const Footer = () => {
                     <div className="footer-col">
                         <h4>Legal</h4>
                         <ul>
-                            <li><Link href="#">Privacy Policy</Link></li>
-                            <li><Link href="#">Terms of Service</Link></li>
+                            <li><Link href="/company">Privacy Policy</Link></li>
+                            <li><Link href="/company">Terms of Service</Link></li>
                         </ul>
                     </div>
                 </div>
@@ -54,7 +53,7 @@ const Footer = () => {
                 <div className="footer-bottom">
                     <div>&copy; {new Date().getFullYear()} InfiniteBlue. All rights reserved.</div>
                     <div style={{ display: 'flex', gap: '16px' }}>
-                        <a href="https://linkedin.com/company/infinite-blue-placeholder" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-text-main)' }} aria-label="LinkedIn">
+                        <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-text-main)' }} aria-label="LinkedIn">
                             <Linkedin size={20} />
                         </a>
                     </div>

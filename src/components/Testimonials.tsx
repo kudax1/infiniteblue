@@ -17,7 +17,7 @@ const Testimonials = () => {
             initials: "MS"
         },
         {
-            quote: "From architecture to deployment, InfiniteBlue brought a level of professionalism and technical depth that's rare to find. They're our go-to technology partner.",
+            quote: "From architecture to deployment, InfiniteBlue brought a level of professionalism and technical depth that's rare to find. They&apos;re our go-to technology partner.",
             name: "Elena R.",
             client: "Alsitype",
             role: "Operations Director",
@@ -30,14 +30,14 @@ const Testimonials = () => {
             <div className="container">
                 <div className="section-header" style={{ textAlign: 'center', margin: '0 auto 64px' }}>
                     <h2>What our clients say</h2>
-                    <p>Don't just take our word for it. Here's what engineering and business leaders have to say about partnering with us.</p>
+                    <p>Don&apos;t just take our word for it. Here&apos;s what engineering and business leaders have to say about partnering with us.</p>
                 </div>
 
                 <div className="testimonials-grid">
                     {testimonials.map((t, i) => (
                         <div key={i} className="testimonial-card">
                             <Quote color="rgba(99, 91, 255, 0.2)" size={32} style={{ marginBottom: '16px' }} />
-                            <p className="testimonial-quote">"{t.quote}"</p>
+                            <p className="testimonial-quote">&quot;{t.quote}&quot;</p>
                             <div className="testimonial-author">
                                 <div className="testimonial-avatar">
                                     {t.initials}
