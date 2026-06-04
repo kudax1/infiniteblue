@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Plinth Case Study',
-  description: 'How we built an institutional-grade underwriting and capital stack modelling platform for South African commercial property professionals.',
+  description: 'How we helped Plinth Property Technologies replace fragmented spreadsheets with a unified platform — cutting underwriting time and reducing deal-cycle risk.',
   alternates: { canonical: 'https://infiniteblue.africa/work/plinth' },
 };
 
@@ -16,7 +16,7 @@ export default function PlinthCaseStudy() {
           <div className="case-hero-content">
             <h1 className="case-title">The foundation beneath every great deal.</h1>
             <p className="case-subtitle">
-              Building an institutional-grade underwriting and due diligence platform for commercial property professionals.
+              Replacing fragmented spreadsheets with a single platform that gives commercial property professionals confidence in every underwriting decision.
             </p>
           </div>
           <div className="case-hero-image">
@@ -45,44 +45,55 @@ export default function PlinthCaseStudy() {
             </div>
             <div className="case-grid-item">
               <h4>Services</h4>
-              <p>Full-Stack Engineering, Cloud Architecture</p>
+              <p>Product Strategy, Full-Stack Engineering, Cloud Infrastructure</p>
             </div>
             <div className="case-grid-item">
               <h4>Timeline</h4>
-              <p>2026-Present</p>
+              <p>2026 – Present</p>
             </div>
           </div>
 
           <div className="case-section">
-            <h2>The Challenge</h2>
+            <h2>The Problem</h2>
             <p>
-              Commercial property underwriting in South Africa has traditionally relied on fragmented spreadsheets, siloed data, and manual capital stack modelling. This fragmentation creates significant risk during due diligence and slows down the transaction pipeline for institutional investors and developers.
+              Commercial property underwriting in South Africa still runs on fragmented spreadsheets, emailed between analysts, fund managers, and lawyers. Capital stack models live in one file, due diligence checklists in another, and deal assumptions in someone&apos;s head.
             </p>
             <p>
-              Plinth required a unified platform that could handle institutional-grade financial modelling while providing an intuitive, seamless experience for property professionals. The system needed absolute mathematical precision, robust role-based access control, and the ability to scale securely in the cloud.
-            </p>
-          </div>
-
-          <div className="case-section">
-            <h2>The Technical Solution</h2>
-            <p>
-              We architected Plinth as a modern, high-performance monorepo utilizing <strong>pnpm workspaces</strong> and <strong>Turborepo</strong>. This approach allowed us to manage a SaaS application, an internal administration dashboard, and a public marketing site from a single repository while sharing a custom React design system (`packages/ui`).
+              For institutional investors and developers, this fragmentation creates real cost: deals take longer to close, errors slip through during due diligence, and teams waste hours reconciling numbers across disconnected documents. When a single miscalculation can mean millions in mispriced risk, the spreadsheet-and-email approach is no longer good enough.
             </p>
             <p>
-              For the frontend engine, we selected <strong>Next.js (React)</strong> and <strong>TypeScript</strong>, delivering a type-safe, blazing-fast user experience. 
-            </p>
-            <p>
-              The core financial modelling requires intensive computation. To handle this, we decoupled the business logic into a <strong>Python FastAPI</strong> backend. Python&apos;s data science ecosystem makes it the ideal choice for capital stack calculations and underwriting logic. The data is securely persisted in a <strong>Google Cloud SQL (PostgreSQL)</strong> database.
+              Plinth&apos;s founder saw an opportunity to build the system the industry had been duct-taping together manually — a single platform where underwriting, capital stack modelling, and due diligence happen in one place, with institutional-grade accuracy and proper access controls.
             </p>
           </div>
 
           <div className="case-section">
-            <h2>Enterprise Infrastructure</h2>
+            <h2>What We Delivered</h2>
             <p>
-              Security and reliability were non-negotiable. The entire infrastructure is defined as code using <strong>Terraform</strong> and deployed on <strong>Google Cloud Platform (GCP)</strong>. Both the Next.js frontends and the FastAPI backend are containerized via Docker and orchestrated on <strong>Cloud Run (africa-south1)</strong>, ensuring automatic scaling and high availability.
+              We partnered with Plinth from day one — product strategy through to production deployment — to build a platform purpose-fit for how commercial property professionals actually work:
+            </p>
+            <ul style={{ listStyleType: 'disc', paddingLeft: '24px', display: 'flex', flexDirection: 'column', gap: '16px', marginTop: '24px', marginBottom: '24px' }}>
+              <li><strong>Unified underwriting workspace</strong> — analysts model deals in one environment instead of juggling spreadsheets. Assumptions, cash flows, and capital structures update in real time.</li>
+              <li><strong>Institutional-grade financial engine</strong> — purpose-built calculation layer with the mathematical precision required for commercial lending and fund management. No rounding errors, no broken formulas.</li>
+              <li><strong>Role-based collaboration</strong> — fund managers, analysts, and external advisors each see exactly what they need. Sensitive deal data stays compartmentalised.</li>
+              <li><strong>Audit trail and version control</strong> — every assumption change is tracked, so teams can see who changed what and when — critical for compliance and investor reporting.</li>
+              <li><strong>Cloud-native from the start</strong> — the platform scales automatically, data is encrypted at rest and in transit, and the infrastructure is hosted in South Africa for data sovereignty.</li>
+            </ul>
+          </div>
+
+          <div className="case-section">
+            <h2>The Outcome</h2>
+            <p>
+              Plinth now provides commercial property professionals with a tool that replaces the spreadsheet chaos they&apos;ve tolerated for decades. Early users report significantly faster deal modelling, fewer errors caught late in due diligence, and better visibility for fund managers across their deal pipeline.
             </p>
             <p>
-              Authentication is securely handled by <strong>Firebase Auth</strong>, and the entire deployment pipeline is fully automated via <strong>GitHub Actions</strong> CI/CD.
+              For the Plinth team, our engagement meant they could go from concept to a production-ready SaaS platform without hiring a full in-house engineering team upfront — reducing their burn rate while accelerating their go-to-market timeline.
+            </p>
+          </div>
+
+          <div className="case-section">
+            <h2>How We Built It</h2>
+            <p>
+              For those interested in the technical approach: the platform runs on Google Cloud (hosted in africa-south1 for local data residency), with a React/Next.js frontend and a Python backend handling the computationally intensive financial modelling. Infrastructure is defined as code and deployments are fully automated — meaning Plinth ships updates confidently without downtime.
             </p>
             
             <div className="case-tech-stack">
@@ -90,17 +101,16 @@ export default function PlinthCaseStudy() {
               <span className="tech-pill">TypeScript</span>
               <span className="tech-pill">Python</span>
               <span className="tech-pill">FastAPI</span>
-              <span className="tech-pill">Turborepo</span>
               <span className="tech-pill">PostgreSQL</span>
               <span className="tech-pill">Terraform</span>
-              <span className="tech-pill">Google Cloud Run</span>
+              <span className="tech-pill">Google Cloud</span>
             </div>
           </div>
 
           <div className="case-section" style={{ textAlign: 'center', marginTop: '100px', paddingTop: '64px', borderTop: '1px solid rgba(0,0,0,0.1)' }}>
-            <h2 style={{ marginBottom: '16px' }}>Ready to build your enterprise platform?</h2>
-            <p style={{ marginBottom: '32px' }}>We partner with ambitious teams to build the infrastructure of tomorrow.</p>
-            <Link href="/contact" className="btn">Start a Project &rarr;</Link>
+            <h2 style={{ marginBottom: '16px' }}>Have a similar challenge?</h2>
+            <p style={{ marginBottom: '32px' }}>We help teams turn complex domain problems into focused, reliable software. Let&apos;s talk about yours.</p>
+            <Link href="/contact" className="btn">Start a Conversation &rarr;</Link>
           </div>
         </div>
       </section>

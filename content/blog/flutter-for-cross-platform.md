@@ -1,6 +1,6 @@
 ---
 title: "Flutter Has Grown Up: Why It's Our Go-To for Cross-Platform Development (And Where It Still Falls Short)"
-date: "2026-06-04"
+date: "2026-01-15"
 description: "A comprehensive look at how Flutter has matured from a promising mobile SDK into a production-grade cross-platform powerhouse — and the trade-offs we still navigate on every project."
 author: "InfiniteBlue Engineering"
 readTime: "12 min read"
