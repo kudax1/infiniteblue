@@ -10,7 +10,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"], variable: "--font-family" });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://infinitebluelabs.com'),
+  metadataBase: new URL('https://infiniteblue.africa'),
   title: "InfiniteBlue | Elite Software Development",
   description: "Software architecture for ambitious enterprises. We co-create exceptional web, iOS, Android, and Harmony OS applications.",
   openGraph: {
@@ -31,8 +31,8 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "InfiniteBlue",
-    "url": "https://infinitebluelabs.com",
-    "logo": "https://infinitebluelabs.com/logo.webp",
+    "url": "https://infiniteblue.africa",
+    "logo": "https://infiniteblue.africa/logo.webp",
     "contactPoint": {
       "@type": "ContactPoint",
       "email": "info@infinitebluelabs.com",

@@ -6,13 +6,13 @@ export function middleware(request: NextRequest) {
   const hostname = request.headers.get('host') || '';
 
   // Define your primary domain
-  const primaryDomain = 'infinitebluelabs.com';
+  const primaryDomain = 'infiniteblue.africa';
 
-  // If the request is coming from infiniteblue.africa or any www version, redirect to the primary domain
+  // If the request is coming from infinitebluelabs.com or any www version, redirect to the primary domain
   if (
-    hostname === 'infiniteblue.africa' ||
-    hostname === 'www.infiniteblue.africa' ||
+    hostname === 'infinitebluelabs.com' ||
     hostname === 'www.infinitebluelabs.com' ||
+    hostname === 'www.infiniteblue.africa' ||
     hostname === 'infiniteblue-agency.web.app' || 
     hostname === 'infiniteblue-agency.firebaseapp.com'
   ) {
