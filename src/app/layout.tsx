@@ -4,6 +4,7 @@ import Script from "next/script";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CookieBanner from "@/components/CookieBanner";
+import AnalyticsTracker from "@/components/AnalyticsTracker";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-family" });
@@ -48,6 +49,7 @@ export default function RootLayout({
         />
       </head>
       <body>
+        <AnalyticsTracker />
         <Script 
           src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || 'dummy_key'}`} 
           strategy="afterInteractive"

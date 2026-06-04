@@ -34,11 +34,11 @@ const Navbar = () => {
                     <Image src="/logo.webp" alt="InfiniteBlue" width={160} height={32} style={{ height: '32px', width: 'auto' }} priority />
                 </Link>
                 
-                {/* Desktop Nav */}
                 <div className="nav-links">
                     <Link href="/services">Services</Link>
                     <Link href="/#services">Features</Link>
                     <Link href="/company">Company</Link>
+                    <Link href="/blog">Blog</Link>
                 </div>
                 <div className="nav-cta">
                     <Link href="/contact" className="btn btn-secondary">Contact Sales &rarr;</Link>
@@ -57,6 +57,7 @@ const Navbar = () => {
                         <Link href="/services" onClick={toggleMobileMenu}>Services</Link>
                         <Link href="/#services" onClick={toggleMobileMenu}>Features</Link>
                         <Link href="/company" onClick={toggleMobileMenu}>Company</Link>
+                        <Link href="/blog" onClick={toggleMobileMenu}>Blog</Link>
                         <Link href="/contact" className="btn btn-secondary" onClick={toggleMobileMenu} style={{marginTop: '16px'}}>Contact Sales &rarr;</Link>
                     </div>
                 </div>
