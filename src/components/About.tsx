@@ -4,13 +4,13 @@ const About = () => {
     return (
         <section id="about" className="section" style={{ background: 'var(--color-surface)' }}>
             <div className="container">
-                <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) minmax(0, 1fr)', gap: '64px', alignItems: 'center' }} className="hero-container">
+                <div style={{ display: 'grid', gap: '64px', alignItems: 'center' }} className="hero-container">
 
                     <div>
                         <div style={{ color: 'var(--color-accent)', fontWeight: 600, fontSize: 'var(--font-sm, 14px)', letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '16px' }}>
                             Our Company
                         </div>
-                        <h2 style={{ fontSize: 'var(--font-h2, 40px)', letterSpacing: '-1px', marginBottom: '24px' }}>
+                        <h2 style={{ fontSize: 'clamp(28px, 5vw, 40px)', letterSpacing: '-1px', marginBottom: '24px' }}>
                             Building the digital infrastructure of tomorrow.
                         </h2>
                         <p style={{ fontSize: 'var(--font-lg, 18px)', color: 'var(--color-text-main)', marginBottom: '24px' }}>

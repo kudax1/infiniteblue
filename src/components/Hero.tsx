@@ -9,7 +9,7 @@ const Hero = () => {
             <div className="container hero-container">
                 <div className="hero-content">
                     <h1>
-                        We build intelligent <br />
+                        We build intelligent{' '}
                         <span className="text-gradient-blue">digital products that scale.</span>
                     </h1>
                     <p style={{ color: 'rgba(255, 255, 255, 0.7)' }}>
