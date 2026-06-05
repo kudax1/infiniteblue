@@ -65,11 +65,14 @@
 .hero-graphic-container {
     position: relative;
     width: 100%;
+    max-width: 100%;
+    min-width: 0;
     height: 500px;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 2;
+    overflow: hidden;
 }
 
 .command-center {
@@ -303,6 +306,8 @@
 
   .hero-graphic-container {
     height: 280px;
+    max-width: 100%;
+    overflow: hidden;
   }
 
   .command-center {
