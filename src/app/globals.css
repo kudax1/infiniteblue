@@ -236,6 +236,7 @@ ul {
   font-size: 64px;
   letter-spacing: -2px;
   margin-bottom: 24px;
+  overflow-wrap: break-word;
 }
 
 .hero-content p {
@@ -908,9 +909,11 @@ select.form-input {
     font-size: 40px;
     letter-spacing: -1px;
   }
-  
+
   .hero-content p {
     margin: 0 auto 40px;
+    max-width: 100%;
+    font-size: 17px;
   }
   
   .hero-actions {
@@ -1044,7 +1047,7 @@ select.form-input {
 
   .hero-content h1,
   .dark-hero h1 {
-    font-size: 36px;
+    font-size: 32px;
     letter-spacing: -1px;
   }
 
