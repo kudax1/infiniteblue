@@ -3,7 +3,7 @@ import type { NextRequest } from 'next/server';
 
 export function middleware(request: NextRequest) {
   const url = request.nextUrl.clone();
-  const hostname = request.headers.get('host') || '';
+  const hostname = request.headers.get('x-forwarded-host') || request.headers.get('host') || '';
 
   // Define your primary domain
   const primaryDomain = 'infiniteblue.africa';
